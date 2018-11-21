@@ -4,8 +4,12 @@ You can open the package manager console from View -> Other Windows -> Package M
 
 This command will install a package into all projects.
 Obviously you have to replace packageName with the package you want to install.
-> Get-Project -All | Install-Package packageName
+```
+Get-Project -All | Install-Package packageName
+```
 
 This command will install a package into a subset of projects, in this case all projects that have a name that ends with ".Test".
 Obviously you have to replace packageName with the package you want to install.
-> Get-Project -All | where { $_.Name.EndsWith(".Test") } | Install-Package packageName
+```
+Get-Project -All | where { $_.Name.EndsWith(".Test") } | Install-Package packageName
+```
