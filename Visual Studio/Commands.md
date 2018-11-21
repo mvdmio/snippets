@@ -1,4 +1,6 @@
-# Package manager commands
+# Package Management Console commands
+This is a list with useful commands I've found for the Package Management Console in Visual Studio.
+
 ## Install a package into multiple projects
 You can open the package manager console from View -> Other Windows -> Package Manager Console. The window has no default shortcut.
 
