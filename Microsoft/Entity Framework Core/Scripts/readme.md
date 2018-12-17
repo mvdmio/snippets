@@ -1,6 +1,8 @@
 # Entity Framework Core scripts
 This repository contains common scripts that can be used to simplify working with Entity Framework.
 
+See the [Microsoft documentation for a full reference of the EF Core command line tooling](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet).
+
 ## Generate Migrations
 The Generate_Migrations.ps1 file contains a script that will generate the required migrations for an Entity Framework project.
 Running this script will update the database to the latest version. The connectionstring of the startup project is used for this.
