@@ -1,14 +1,14 @@
 ﻿using System;
 using System.IO;
 using System.Text;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace csharp
+namespace GildedRose.Kata
 {
-    [TestFixture]
+    [TestClass]
     public class ApprovalTest
     {
-        [Test]
+        [TestMethod]
         public void ThirtyDays()
         {
             var lines = File.ReadAllLines("ThirtyDays.txt");

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace csharp
+namespace GildedRose.Kata
 {
     public class GildedRose
     {
