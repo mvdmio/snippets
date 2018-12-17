@@ -1,0 +1,1 @@
+dotnet ef database update --project "<project-directory>" --startup-project "<startup-directory>" --context "<context-class>"
