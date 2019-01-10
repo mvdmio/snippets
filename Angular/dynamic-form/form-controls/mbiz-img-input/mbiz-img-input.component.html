@@ -1,0 +1,55 @@
+<div class="form-group">
+    <label>{{label}}</label>
+
+    <mbiz-alert #alerts></mbiz-alert>
+
+    <div class="mb-1" *ngIf="multiple || (fileImages.length === 0 && serverImages.length === 0)">
+        <button type="button" class="btn btn-primary m-0" (click)="openDialog()" [disabled]="control.pending">
+            {{(multiple ? 'common.button.add' : 'common.button.select') | translate}}
+        </button>
+        <input class="hidden" #fileInput type="file" [attr.multiple]="multiple ? '' : null" [accept]="type" (change)="onFilesChanged(fileInput.files)" />
+    </div>
+
+    <ng-container *ngIf="fileImages && fileImages.length > 0">
+        <h4>{{'component.image-input.uploads' | translate}}</h4>
+        <div class="clr-row w-100">
+            <div class="clr-col-auto mw-100" *ngFor="let image of fileImages">
+                <div class="card mt-0">
+                    <div class="card-header">
+                        {{image.fileName}}
+                    </div>
+                    <div class="card-img">
+                        <img class="input-image" [src]="image.dataUrl" [attr.alt]="image.fileName" />
+                    </div>
+                    <div class="card-footer">
+                        <div class="progress loop" *ngIf="image.uploadProgress === 0">
+                            <progress></progress>
+                        </div>
+                        <div class="progress" *ngIf="image.uploadProgress > 0">
+                            <progress [value]="image.uploadProgress" max="100"></progress>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="serverImages && serverImages.length > 0">
+        <div class="clr-row w-100">
+            <div class="clr-col-auto mw-100" *ngFor="let image of serverImages">
+                <div class="card mt-0">
+                    <!--<div class="card-header">
+                        Currently, images do not have a name.
+                        {{image.name}}
+                    </div>-->
+                    <div class="card-img">
+                        <img class="input-image" [src]="image.imageUrl" [attr.alt]="image.name" />
+                    </div>
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-secondary" [disabled]="control.pending" (click)="removeServerImage(image)">{{'common.button.delete' | translate}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

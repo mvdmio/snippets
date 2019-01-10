@@ -1,0 +1,40 @@
+<div [class.form-group]="!inline">
+    <label *ngIf="!inline" [for]="id">{{label}}</label>
+    <label [for]="id" aria-haspopup="true" role="tooltip" class="tooltip tooltip-validation tooltip-sm tooltip-top-left w-100" [class.invalid]="control.invalid && (control.dirty || control.touched)">
+
+        <input #inputElement [type]="type" [id]="id" [formControl]="control" class="w-100" placeholder="{{label}}" />
+
+        <span class="tooltip-content" *ngIf="control.invalid && (control.dirty || control.touched)">
+            <div *ngIf="control.errors.required">
+                {{'common.validation.required' | translate}}
+            </div>
+            <div *ngIf="control.errors.email">
+                {{'common.validation.email' | translate}}
+            </div>
+            <div *ngIf="control.errors.min">
+                {{'common.validation.min' | translate}}
+            </div>
+            <div *ngIf="control.errors.max">
+                {{'common.validation.max' | translate}}
+            </div>
+            <div *ngIf="control.errors.valuesnotequal">
+                {{'common.validation.values-not-equal' | translate}}
+            </div>
+            <div *ngIf="control.errors.websiteNameTaken">
+                {{'common.validation.name-already-taken' | translate}}
+            </div>
+            <div *ngIf="control.errors.invalidUrlSlug">
+                {{'common.validation.invalid-url' | translate}}
+            </div>
+            <div *ngIf="control.errors.invalidUrl">
+                {{'common.validation.invalid-url' | translate}}
+            </div>
+            <div *ngIf="control.errors.invalidGoogleSiteVerificationMetaTag">
+                {{'common.validation.invalid-google-site-verification-meta-tag' | translate}}
+            </div>
+            <div *ngIf="control.errors.invalidNumber">
+                {{'common.validation.invalid-number' | translate}}
+            </div>
+        </span>
+    </label>
+</div>

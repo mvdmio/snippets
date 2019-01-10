@@ -1,0 +1,23 @@
+﻿:host {
+    width: 100%;
+}
+
+.input-image {
+    max-width: 100%;
+    max-height: 25vh;
+    width: auto;
+    height: auto;
+}
+
+.stack-card >>> .stack-block-label {
+    max-width: 100%;
+    flex-basis: 100%;
+}
+
+.stack-card >>> .stack-children >>> .stack-block-label {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.stack-card >>> .stack-block-content {
+    display: none;
+}

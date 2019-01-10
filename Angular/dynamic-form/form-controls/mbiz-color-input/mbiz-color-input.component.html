@@ -1,0 +1,12 @@
+<div [class.form-group]="!inline">
+    <label *ngIf="!inline" [for]="id">{{label}}</label>
+    
+    <div class="clr-row">
+        <div [class.clr-col-12]="!inline" [class.clr-col-auto]="inline">
+            <p-colorPicker [id]="id" [formControl]="control" [inline]="!inline"></p-colorPicker>
+        </div>
+        <div [class.clr-col-12]="!inline" [class.clr-col-auto]="inline">
+            <input type="text" [(ngModel)]="colorValue" />
+        </div>
+    </div>
+</div>

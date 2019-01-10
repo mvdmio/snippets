@@ -1,0 +1,4 @@
+<div [class.form-group]="!inline">
+    <label *ngIf="!inline" [for]="id">{{label}}</label>
+    <input type="date" [id]="id" [(clrDate)]="inputValue" />
+</div>

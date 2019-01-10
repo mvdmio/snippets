@@ -1,0 +1,7 @@
+<div class="form-group">
+    <label>{{label || ((control.value ? 'common.input.enabled' : 'common.input.disabled') | translate)}}</label>
+    <div class="toggle-switch">
+        <input type="checkbox" [id]="id" [formControl]="control">
+        <label [for]="id"></label>
+    </div>
+</div>

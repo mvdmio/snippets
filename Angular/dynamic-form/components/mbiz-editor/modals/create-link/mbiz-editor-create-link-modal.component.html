@@ -1,0 +1,17 @@
+<clr-modal>
+    <h3 class="modal-title">Link</h3>
+    <div class="modal-body">
+        <mbiz-form-wrapper [form]="form" [submitEnabled]="false" (keyup.enter)="submit()">
+            <mbiz-text-input type="text" [control]="textControl" label="{{'common.input.text' | translate}}"></mbiz-text-input>
+            <mbiz-text-input #urlInput type="url" [control]="urlControl" label="{{'common.input.url' | translate}}"></mbiz-text-input>
+        </mbiz-form-wrapper>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline" (click)="close()">
+            {{'common.button.cancel' | translate}}
+        </button>
+        <button type="button" class="btn btn-primary" [disabled]="form.invalid" (click)="submit()">
+            {{'common.button.submit' | translate}}
+        </button>
+    </div>
+</clr-modal>

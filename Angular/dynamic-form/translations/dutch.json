@@ -1,0 +1,18 @@
+{
+  "editor": {
+    "bold": "Vetgedrukt",
+    "default-placeholder": "Vul hier uw tekst in.",
+    "italic": "Cursief",
+    "underline": "Onderstreept",
+    "paragraph": "Paragraaf",
+    "link": "Link",
+    "unlink": "Verwijder link",
+    "heading": {
+      "dropdown-title": "Kop",
+      "h1": "Kop 1",
+      "h2": "Kop 2",
+      "h3": "Kop 3",
+      "h4": "Kop 4"
+    }
+  }
+}

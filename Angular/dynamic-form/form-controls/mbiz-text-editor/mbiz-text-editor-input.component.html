@@ -1,0 +1,7 @@
+<div [class.form-group]="!inline">
+    <label *ngIf="!inline" [for]="id">{{label}}</label>
+
+    <!--<div class="pell-editor" ngPell [formControl]="control"></div>-->
+    <mbiz-editor [formControl]="control"></mbiz-editor>
+    
+</div>

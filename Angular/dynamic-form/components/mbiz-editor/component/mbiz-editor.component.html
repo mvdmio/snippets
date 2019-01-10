@@ -1,0 +1,42 @@
+<div class="editor">
+    <div class="toolbar clr-row clr-align-items-center" #toolbar>
+        <div class="clr-col-auto">
+            <div class="btn-group btn-icon">
+                <mbiz-editor-toolbar-button shape="bold" title="{{'editor.bold' | translate}}" [action]="boldAction"></mbiz-editor-toolbar-button>
+                <mbiz-editor-toolbar-button shape="italic" title="{{'editor.italic' | translate}}" [action]="italicAction"></mbiz-editor-toolbar-button>
+                <mbiz-editor-toolbar-button shape="underline" title="{{'editor.underline' | translate}}" [action]="underlineAction"></mbiz-editor-toolbar-button>
+                <mbiz-editor-toolbar-button shape="text" title="{{'editor.paragraph' | translate}}" [action]="paragraphAction"></mbiz-editor-toolbar-button>
+            </div>
+        </div>
+        <div class="clr-col-auto">
+            <clr-dropdown>
+                <button type="button" class="btn btn-link" clrDropdownTrigger>
+                    <clr-icon shape="font-size"></clr-icon>
+                    <clr-icon shape="caret down"></clr-icon>
+                </button>
+                <clr-dropdown-menu>
+                    <mbiz-editor-toolbar-dropdown-button [action]="heading1Action" title="{{'editor.heading.h1' | translate}}"></mbiz-editor-toolbar-dropdown-button>
+                    <mbiz-editor-toolbar-dropdown-button [action]="heading2Action" title="{{'editor.heading.h2' | translate}}"></mbiz-editor-toolbar-dropdown-button>
+                    <mbiz-editor-toolbar-dropdown-button [action]="heading3Action" title="{{'editor.heading.h3' | translate}}"></mbiz-editor-toolbar-dropdown-button>
+                    <mbiz-editor-toolbar-dropdown-button [action]="heading4Action" title="{{'editor.heading.h4' | translate}}"></mbiz-editor-toolbar-dropdown-button>
+                    <mbiz-editor-toolbar-dropdown-button [action]="paragraphAction" title="{{'editor.paragraph' | translate}}"></mbiz-editor-toolbar-dropdown-button>
+                </clr-dropdown-menu>
+            </clr-dropdown>
+        </div>
+        <div class="clr-col-auto">
+            <div class="btn-group btn-icon">
+                <mbiz-editor-toolbar-button shape="number-list" title="{{'editor.ordered-list' | translate}}" [action]="orderedListAction"></mbiz-editor-toolbar-button>
+                <mbiz-editor-toolbar-button shape="bullet-list" title="{{'editor.unordered-list' | translate}}" [action]="unorderedListAction"></mbiz-editor-toolbar-button>
+            </div>
+        </div>
+        <div class="clr-col-auto">
+            <div class="btn-group btn-icon">
+                <mbiz-editor-toolbar-button shape="link" title="{{'editor.link' | translate}}" [action]="linkAction"></mbiz-editor-toolbar-button>
+                <mbiz-editor-toolbar-button shape="unlink" title="{{'editor.unlink' | translate}}" [action]="unlinkAction"></mbiz-editor-toolbar-button>
+            </div>
+        </div>
+    </div>
+    <div class="content" #content contenteditable="true" attr.placeholder="{{placeholder || 'editor.default-placeholder' | translate}}"></div>
+</div>
+
+<mbiz-editor-create-link-modal></mbiz-editor-create-link-modal>

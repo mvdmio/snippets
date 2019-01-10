@@ -1,0 +1,48 @@
+:host {
+    width: 100%;
+}
+
+.editor {
+}
+
+    .editor .clr-row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .editor .clr-col-auto {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .editor .toolbar {
+        border: 1px solid #ccc;
+        border-bottom: 0;
+    }
+
+    .editor .content {
+        cursor: text;
+        color: #000;
+        border: 1px solid #ccc;
+        padding: 0.1rem 0.5rem;
+        min-height: 3rem;
+        max-height: 60vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+        .editor .content:empty:before {
+            cursor: text;
+            color: #565656;
+            content: attr(placeholder);
+            display: block;
+        }
+
+::ng-deep .editor .content *:first-child {
+    margin-top: 0;
+}
+
+::ng-deep .editor .content p {
+    color: unset;
+    font-weight: unset;
+}
