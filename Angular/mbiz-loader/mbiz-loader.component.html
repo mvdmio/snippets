@@ -1,0 +1,5 @@
+<div class="clr-row clr-align-items-center clr-justify-content-center mt-1" *ngIf="isLoading">
+   <span class="spinner"></span>
+</div>
+
+<ng-content *ngIf="!isLoading"></ng-content>
