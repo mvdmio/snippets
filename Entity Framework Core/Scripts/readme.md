@@ -4,7 +4,7 @@ This repository contains common scripts that can be used to simplify working wit
 See the [Microsoft documentation for a full reference of the EF Core command line tooling](https://docs.microsoft.com/en-us/ef/core/miscellaneous/cli/dotnet).
 
 ## Select Environment
-The Select_Environment.ps1 file contains a script that will search for all appsettings.*.json files in the given directory. It will then present a choice input to the user so the user can select the environment he/she wants to use. This is mainly important for `Update Database` and `Apply Migration` scripts, because those will query a database.
+The `Select_Environment.ps1` file contains a script that will search for all appsettings.*.json files in the given directory. It will then present a choice input to the user so the user can select the environment he/she wants to use. This is mainly important for `Update Database` and `Apply Migration` scripts, because those will query a database.
 
 When calling the script, provide the following parameter:
 1. `startupProjectDirectory` - This is the directory of the project that contains the startup logic and connection strings. Usually this is the web project or the windows application project. - e.g. ../Web_Project_Directory _(Don't add the .csproj file to the path, just put in the directory where the csproj file is located)_
@@ -26,16 +26,14 @@ This will save the current environment into a temporary variable, set the enviro
 Note that, for entity framework to work correctly, you should set the environment to exactly whatever the * is in appsettings.*.json. You can use the `Select_Environment.ps1` script the show a selection dialog for the environment to a user.
 
 ## Select Migration
-The Select_Migration.ps1 file contains a script that will search for all migration C# files in the given directory. It will then present a choice input to the user so the user can select the migration he/she wants to use. This is mainly important for the `Apply Migration` script, because that requires a migration name to apply to the database.
+The `Select_Migration.ps1` file contains a script that will search for all migration C# files in the given directory. It will then present a choice input to the user so the user can select the migration he/she wants to use. This is mainly important for the `Apply Migration` script, because that requires a migration name to apply to the database.
 
 When calling the script, provide the following parameters:
 1. `projectDirectory` - This is the directory of the project that contains the entity framework context class. Can be the same as the startup project, if you didn't separate your entity framework classes into a separate project. _Note that the path is relative to the script location_ - e.g. ../Entity_Framework_Project_Directory _(Don't add the .csproj file to the path, just put in the directory where the csproj file is located)_
 2. `migrationsDirectory` - This is a directory relative to the project directory where migrations can be found.
 
 ## Generate Migrations
-The Generate_Migrations.ps1 file contains a script that will generate the required migrations for an Entity Framework project.
-Running this script will update the database to the latest version. The connectionstring of the startup project is used for this.
-The script will prompt the user for a name for the migration.
+The `Generate_Migrations.ps1` file contains a script that will generate the required migrations for an Entity Framework project.
 
 When using the script, replace the following variables with your own values:
 1. `<migration-directory>` - This is the directory where the migrations will be placed. _Note that the path is relative to the given project_ - e.g. ./Data/IdentityServerDb/Migrations
@@ -44,8 +42,7 @@ When using the script, replace the following variables with your own values:
 4. `<context-class>` - This is the class name of the context that you want to generate migrations for. This can either be just the class name, or the fully qualified class name - e.g. MyDbContext or my.namespace.MyDbContext
 
 ## Update Database
-The Generate_Migrations.ps1 file contains a script that will generate the required migrations for an Entity Framework project.
-Running this script will update the database to the latest version. The connectionstring of the startup project is used for this.
+The `Update_Database.ps1` file contains a script that will executed the required migrations for an Entity Framework project on a database. Running this script will update the database to the latest version. The ConnectionString of the startup project is used for this.
 
 When using the script, replace the following variables with your own values:
 1. `<project-directory>` - This is the directory of the project that contains the entity framework context class. Can be the same as the startup project, if you didn't separate your entity framework classes into a separate project. _Note that the path is relative to the script location_ - e.g. ../Entity_Framework_Project_Directory _(Don't add the .csproj file to the path, just put in the directory where the csproj file is located)_
